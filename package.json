@@ -39,5 +39,9 @@
     "build": "gulp build",
     "test": "gulp archive && mocha --reporter spec --timeout 5000"
   },
-  "version": "5.0.0"
+  "version": "5.0.0",
+  "dependencies": {
+    "gulp-uglify": "~1.1.0",
+    "gulp-rename": "~1.2.0"
+  }
 }

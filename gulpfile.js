@@ -16,6 +16,13 @@ var dirs = pkg['h5bp-configs'].directories;
 // | Helper tasks                                                      |
 // ---------------------------------------------------------------------
 
+gulp.task('ugly', function () {
+    return gulp.src('src/js/diabetic.js')
+        .pipe(plugins.uglify())
+        .pipe(plugins.rename('./diabetic.min.js'))
+        .pipe(gulp.dest(dirs.dist+'/js'));
+});
+
 gulp.task('archive:create_archive_dir', function () {
     fs.mkdirSync(path.resolve(dirs.archive), '0755');
 });
@@ -63,14 +70,19 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('copy', [
-    'copy:.htaccess',
+    //'copy:.htaccess',
     'copy:index.html',
-    'copy:jquery',
-    'copy:main.css',
-    'copy:misc',
-    'copy:normalize'
+    'copy:js'
+    //'copy:jquery',
+    //'copy:main.css',
+    //'copy:misc',
+    //'copy:normalize'
 ]);
 
+gulp.task('copy:js', function () {
+    return gulp.src(dirs.src+'/js/*')
+        .pipe(gulp.dest(dirs.dist+'/js'));
+});
 gulp.task('copy:.htaccess', function () {
     return gulp.src('node_modules/apache-server-configs/dist/.htaccess')
                .pipe(plugins.replace(/# ErrorDocument/g, 'ErrorDocument'))
@@ -151,7 +163,7 @@ gulp.task('archive', function (done) {
 
 gulp.task('build', function (done) {
     runSequence(
-        ['clean', 'lint:js'],
+        ['clean'],'ugly',
         'copy',
     done);
 });
