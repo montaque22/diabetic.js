@@ -1,0 +1,10 @@
+archive
+node_modules
+.idea/.name
+.idea/diabetic.iml
+.idea/encodings.xml
+.idea/modules.xml
+.idea/scopes/scope_settings.xml
+.idea/vcs.xml
+.idea/workspace.xml
+src/**
