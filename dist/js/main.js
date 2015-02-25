@@ -2,7 +2,9 @@
 function restrictedAddition(a,b){
     return a + b;
 }
-
+function subtract(a, b){
+    return b - a;
+}
 function freeAddition(){
     var output = 0;
     for(var i = 0, len = arguments.length;i<len;i++){
@@ -23,3 +25,6 @@ console.log('Method 5: '+ restrictedAddition.curry(1)()(2));
 
 console.log('Method 6: Takes infinite parameters: '+freeAddition.curry(0,0,0,1,1,0,null,1)());
 
+var piped = restrictedAddition.pipe(subtract, freeAddition);
+
+console.log('Piped: '+ piped(1,2));

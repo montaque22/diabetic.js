@@ -8,7 +8,7 @@
   "description": "add some syntactic sugar to your javascript",
   "main": "\"dist/js/diabetic.min.js\"",
   "keywords": [
-    "curry","helper","sugar"
+    "curry","helper","sugar","pipe"
   ],
   "license": "MIT",
   "ignore": [

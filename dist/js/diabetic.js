@@ -36,3 +36,20 @@ Function.prototype.curry = function(){
                  fn.apply(fn, combined);
         };
 };
+
+Function.prototype.pipe = function(){
+    var functions = [].splice.call(arguments,0);
+    var currentFunc = this.curry();
+    return function(){
+        var ans = currentFunc.apply(currentFunc,arguments);
+        if(arguments.length < currentFunc.length){
+            return ans.pipe.apply(ans,functions);
+        }else if(!functions.length){
+            return ans;
+        }
+        functions.forEach(function(el){
+            ans = el(ans);
+        });
+        return ans;
+    };
+};
