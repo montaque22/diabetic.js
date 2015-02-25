@@ -1,4 +1,4 @@
-# ![alt tag](/orientedjs_title.png)
+# ![alt tag](/diabetic.png)
 
 This javascript library adds sweet functions to assist in everyday development.
 Diabetic doesn't manipulate the DOM, doesn't make any AJAX calls and 
