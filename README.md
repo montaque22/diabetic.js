@@ -1,6 +1,8 @@
-# Diabetic JS
+# ![alt tag](/orientedjs_title.png)
 
-This javascript plugin adds useful functions to assist in everyday coding
+This javascript library adds sweet functions to assist in everyday development.
+Diabetic doesn't manipulate the DOM, doesn't make any AJAX calls and 
+it doesn't need jQuery!
 
 ## Quick start
 
@@ -10,6 +12,7 @@ bower install --save diabetic
 
 The following lists the function available
 * curry
+* pipe
 
 ## Documentation
 
