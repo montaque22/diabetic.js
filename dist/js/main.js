@@ -71,5 +71,5 @@ console.log('Should Return 6: ' + pipeInThirdState()()(2)()(2,3)); // returns 6
 console.log('Should be the same: ' + anotherPipeInSecondState(5)(2,3));
 
 
-add.hold(2);
-var xx = add.release(1);
+//add.hold(2);
+//var xx = add.release(1);

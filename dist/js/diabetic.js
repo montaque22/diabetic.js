@@ -162,17 +162,6 @@
         };
     };
 
-    Function.prototype.wait = function(ms){
-        var func = this;
-        var args = arguments;
-        setTimeout(function(){
-            func.apply(func,args);
-        },ms || 500);
-    };
-
-    Function.prototype.cancel = function(){
-
-    };
 
     /*
         Stores the values for a function to be used later on.
@@ -183,7 +172,7 @@
         //only one function can be stored at a time
         // note : the function is still usable
         queue.store(this, arguments);
-    }
+    };
 
     /*
         This releases the function that was held previously
@@ -214,13 +203,7 @@
         var combine = args.concat([].splice.call(arguments, 0));
         return this.apply(this, combine);
 
-    }
+    };
 
-    Array.prototype.cycle = function(callback){
-        for(var i = 0, len = this.length;i<len;i++){
-            callback(this[i])
-        }
-    }
-
-})()
+})();
 
