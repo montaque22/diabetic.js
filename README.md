@@ -13,6 +13,7 @@ bower install --save diabetic
 The following lists the function available
 * curry
 * pipe
+* hold & release
 
 ## Documentation
 
